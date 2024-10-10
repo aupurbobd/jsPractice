@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="utf-8">
+        <title>Introduction to JavaScript</title>
+        <script>
+            function jsFunction(){
+                document.getElementById("fun").innerHTML = "Paragraph modified!";
+            }
+        </script>
+    </head>
+    <body>
+        <h1>JavaScript</h1>
+        <h2>What can JavaScript do?</h2>
+        <p id="demo">JavaScript can change HTML Content</p>
+        <button type="button" onclick='document.getElementById("demo").innerHTML="hello JavaScript"'>Click me!</button>
+        
+        <p id="css">JavaScript can change the style of an HTML Content</p>
+        <button type="button" onclick="document.getElementById('css').style.fontSize='40px'">Click to change</button>
+        <p id="script"></p>
+        <script>
+            document.getElementById("script").innerHTML="My JavaScript script";
+        </script>
+        <p id="fun">this paragraph will be changed</p>
+        <button type="button" onclick="jsFunction()">Click here</button>
+
+
+        <p id ='para'>This paragraph will be changed from body</p>
+        <script>
+            function prafunction(){
+                document.getElementById('para').innerHTML="Paragraph changed from the body";
+            }
+        </script>
+        <button type="button" onclick="prafunction()">Click here...</button>
+
+        <hr>
+
+        <script>
+           document.write("Hello JavaScript Document!")
+        </script>
+    </body>
+</html>

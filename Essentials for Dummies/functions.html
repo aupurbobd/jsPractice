@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="utf-8">
+        <title>Harnessing the power of Functions</title>
+        <script>
+            function changebkColourBlue(){
+                document.body.style.backgroundColor="Blue";
+            }
+            function changebkColourWhite(){
+                document.body.style.backgroundColor="white";
+            }
+
+            function changebkColour(newColor){
+                document.body.style.backgroundColor=newColor;
+            }
+            
+            function displayGreetings(){
+                const currentHour = new Date().getHours();
+                if (currentHour<12){
+                    console.log("Good Morning!");
+                }
+                else{
+                    console.log("Good day!")
+                }
+               console.log("How are you?")
+            }
+            displayGreetings()
+        </script>
+    </head>
+    <body>
+        <h1>Functions in JavaScript</h1>
+        <button type = "button" onclick="changebkColourBlue()">Blue</button>
+        <button type="button" onclick="changebkColourWhite()">White</button>
+        <button type="button" onclick="changebkColour('Green')">Green</button>
+        <input type="color">
+
+        <h2>Use of Anonymous Functions </h2>
+
+        <script>
+            const preTipTotal = 100.00;
+            const tipPercentage = 0.15;
+
+            //Declare tipCost using an anonymous function
+            const tipCost = function (preTip, tipPercent){
+                const tipResult = preTip * tipPercent;
+                return (tipResult);
+            }
+            
+            const totalBill = preTipTotal + tipCost(preTipTotal, tipPercentage);
+            document.write("Total bill: "+totalBill);
+        </script>
+
+        <br>
+
+        <button type="button" id="bgPink">Pink</button>
+        <button type="button" id="bgCyan">Cyan</button>
+
+        <script>
+            function makeBGPink(){
+                document.body.style.backgroundColor='pink';
+            }
+            function makBGCyan(){
+                document.body.style.backgroundColor='cyan';
+            }
+            document.getElementById('bgPink').addEventListener('click', makeBGPink);
+            document.getElementById('bgCyan').addEventListener('click',makBGCyan);
+        </script>
+
+        <button type="button" id="bgOrange">Orange</button>
+        <button type="button" id="bgRed">Red</button>
+
+        <script>
+            document.getElementById('bgOrange').addEventListener('click',
+                function(){
+                    document.body.style.backgroundColor='Orange';
+                }
+            );
+            
+            document.getElementById('bgRed').addEventListener('click',
+                function(){
+                    document.body.style.backgroundColor='Red';
+                }
+            );
+        </script>
+        <br>
+
+        <script>
+            const itemCost = 512.00;
+            const taxRate = 0.15;
+
+            totalTax = (iCost, tRate)=>{
+                const tTax=iCost * tRate;
+                return (tTax);
+            }
+
+            const itemPrice=itemCost + totalTax(itemCost, taxRate);
+            document.write("Item price including Tax: " + itemPrice);
+
+        </script>
+       
+    </body>
+</html>

@@ -1,0 +1,1 @@
+document.write("this page is Copyright " + new Date().getFullYear());
