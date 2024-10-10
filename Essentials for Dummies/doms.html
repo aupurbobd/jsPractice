@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="utf-8">
+        <title>Coding with Document Object Model</title>
+    </head>
+    <body>
+        <header>
+            <h1>Coding the Document Object Model</h1>
+            <hr>
+        </header>
+        <main>
+            <p>
+                I am trying to book a parking lot in <a href="https://web.eparking.fi/">eparking</a>, but there is no free parking lot here.<br>
+                There are a number of parking places here in LUT campus:
+                <div id="parkings">
+                    <ol>
+                        <li>Guest Pakring</li>
+                        <li>Free Parking</li>
+                        <li>Non-Heating Parking</li>
+                        <li>Heating Parking</li>
+                        <li>Parking with charging Station</li>
+                    </ol>
+                </div>
+            </p>
+        </main>
+        
+        <script>
+            document.writeln(document.location);
+            document.write("<br>");
+            const docLocation=document.location;
+            document.writeln(document.getElementsByTagName("li"));
+            const div=document.getElementsByTagName('div');
+            document.writeln(div)
+        </script>
+
+    </body>
+</html>
