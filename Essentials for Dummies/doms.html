@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="eng">
-    <head>
+    <head id ="headerid">
         <meta charset="utf-8">
         <title>Coding with Document Object Model</title>
     </head>
     <body>
-        <header>
+        <header id="page-header" style="color: blue; font-family: 'Lucida Handwriting';">
             <h1>Coding the Document Object Model</h1>
             <hr>
         </header>
-        <main>
+        <main id="content-area" style="color:brown; font-family: 'Lucida Handwriting';">
             <p>
                 I am trying to book a parking lot in <a href="https://web.eparking.fi/">eparking</a>, but there is no free parking lot here.<br>
                 There are a number of parking places here in LUT campus:
@@ -23,16 +23,48 @@
                     </ol>
                 </div>
             </p>
-        </main>
         
+        
+            <script>
+                document.writeln(document.location);
+                document.write("<br>");
+                const docLocation=document.location;
+                document.writeln(document.getElementsByTagName("li"));
+                console.log(document.getElementsByTagName("li"));
+                const li = document.getElementsByTagName("li");
+                document.writeln(li[0] +" "+li[1]);
+                const div=document.getElementsByTagName('div');
+                document.writeln(div[0])
+                document.write("<br>");
+                const totallist = document.getElementsByTagName("li").length;
+                document.write(totallist);
+                document.write("<br>");
+                for(const l of li){
+                    document.write(l.tagName)
+                    document.write("<br>");
+                    document.write(l.innerHTML);
+                    document.write("<br>");
+                    document.write(l.innerText);
+                    document.write("<br>");
+                    if(l.innerHTML=="Free Parking"){
+                        document.writeln("identified!");
+                        document.getElementsByTagName(li.tagName).innerText="identified!";
+                    }
+                    document.write("<br>");
+
+                }
+                
+            </script>
+        </main>
+        <br>
+        <h2>I am outside of main area.</h2>
         <script>
-            document.writeln(document.location);
-            document.write("<br>");
-            const docLocation=document.location;
-            document.writeln(document.getElementsByTagName("li"));
-            const div=document.getElementsByTagName('div');
-            document.writeln(div)
+            const bodyElements = document.body.children;
+            console.log(bodyElements[0]);
+            document.write(bodyElements[0]);
+
         </script>
+
 
     </body>
 </html>
