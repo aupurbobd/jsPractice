@@ -23,6 +23,42 @@
                     </ol>
                 </div>
             </p>
+
+            <div id="my-div"></div>
+            <button type="button" id="my-button">click here</button>
+
+            <script>
+                const myButton = document.getElementById("my-button");
+                myButton.addEventListener('click', function(){
+                    const mydiv=document.getElementById("my-div");
+                    mydiv.innerHTML="<h3>Thank you for your input</h3>";
+                    console.log("button clicked");
+                });
+            </script>
+
+            <br>
+
+            <div>
+                Press any key:
+            </div>
+            <input id="key-input" type="text">
+            <div>
+                The code of the key you typed:
+            </div>
+            <div id="key-output">
+
+            </div>
+
+            <script>
+                const keyInput = document.getElementById("key-input");
+                keyInput.addEventListener('keypress', function(e){
+                    const keyOutput = document.getElementById('key-output');
+                    keyOutput.innerHTML=e.which;
+                });
+            </script>
+
+
+            <br>
         
         
             <script>
@@ -62,6 +98,58 @@
             const bodyElements = document.body.children;
             console.log(bodyElements[0]);
             document.write(bodyElements[0]);
+            const firstchild = document.body.firstChild;
+            console.log(firstchild);
+            const bodyelement = document.getElementsByTagName("body");
+            console.log(bodyelement);
+            const bodychild=bodyelement.firstChild;
+            console.log(bodychild);
+            const headerelement = document.getElementsByTagName("header");
+            console.log(headerelement);
+            const headerchild = headerelement.firstChild;
+            console.log(headerchild);
+            const headercontent = document.getElementById("page-header");
+            console.log(headercontent);
+            const firstchildelement =headercontent.firstElementChild;
+            console.log(firstchildelement);
+            document.getElementById("page-header").firstElementChild.innerHTML="Coding the Document Object Model - modified";
+            const lastelement = document.getElementById("content-area").lastElementChild
+            console.log(lastelement);
+            document.getElementById("content-area").appendChild="<h2>New line</h2>"
+
+            const newh2 = document.createElement("h2");
+            document.querySelector("main").prepend(newh2);
+            newh2.innerHTML="E-Parking at LUT";
+            newh2.style.color='Green';
+
+            const newnav=document.createElement("nav");
+            // newnav.setAttribute='nav-id';
+            newnav.id="navarea";
+            document.querySelector("main").prepend(newnav);
+            // newnav.innerHTML="<a href='doms.html'>Home</a>";
+            newnav.innerHTML="<a href='doms.html'>Home</a> <a href='functions.html'>Functions</a>";
+            const nav1 = document.getElementsByTagName("nav");
+            newmenu = document.createElement("a");
+            newmenu.id='intro'
+            document.querySelector("nav").append(newmenu);
+            newmenu.innerText="Introduction";
+
+            const introid=document.getElementById("intro");
+
+            introid.setAttribute("href", "example01.html");
+
+
+            const headerid= document.getElementById("page-header");
+            const navid=document.getElementById("navarea");
+            navid.insertAdjacentHTML("beforeend","<a href='doms.html'>DOMS</a>")
+            navid.insertAdjacentText("beforebegin", " I am here");
+            
+            document.addEventListener('DOMContentLoaded',function(){
+                console.log("Page loaded");
+            });
+
+
+
 
         </script>
 

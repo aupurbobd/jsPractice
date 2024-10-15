@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="utf-8">
+        <title>
+            Working with Arrays
+        </title>
+    </head>
+    <body>
+        <header>
+            <h1 style="text-align: center; color: blueviolet; font-family:Georgia; font-weight: bold;">Working with Arrays []</h1>
+            <hr>
+        </header>
+        <main>
+            <script>
+                const family=['Aupurbo', 'Neela', 'Wasee', 'Zahraa'];
+                document.writeln("<p>")
+                family.forEach((value,index)=>{
+                    const pos = index+1;
+                    console.log("Element "+ pos +" has the value: "+ value);
+                    document.writeln("Element "+ pos +" has the value: "+ value+"<br>");
+
+                });
+                document.writeln("</p>")
+            </script>
+        </main>
+    </body>
+</html>
