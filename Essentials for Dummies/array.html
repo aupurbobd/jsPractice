@@ -2,6 +2,8 @@
 <html lang="eng">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>
             Working with Arrays
         </title>
@@ -12,6 +14,7 @@
             <hr>
         </header>
         <main>
+            <h2>Array iteration with forEach()</h2>
             <script>
                 const family=['Aupurbo', 'Neela', 'Wasee', 'Zahraa'];
                 document.writeln("<p>")
@@ -19,10 +22,32 @@
                     const pos = index+1;
                     console.log("Element "+ pos +" has the value: "+ value);
                     document.writeln("Element "+ pos +" has the value: "+ value+"<br>");
-
                 });
                 document.writeln("</p>")
             </script>
+            <h2>Array iteration with Array Map()</h2>
+            <script>
+                const tempFahrenheit = [-40, 0, 32, 100, 212, -32];
+                const tempCelcius = tempFahrenheit.map((temp) => { return (temp - 32)*0.5556});
+                console.log(tempCelcius);
+                document.writeln("Fahrenheit  :  Celcius <br>");
+                for(var i=0; i< tempFahrenheit.length; i++){
+                    document.writeln(tempFahrenheit[i]+ " :      "+tempCelcius[i] +"<br>");
+                }
+            </script>
+            <h2>Iteration with with Reduce()</h2>
+            <script>
+                const unitsInStock =[232, 534, 876, 122, 212, 449, 71, 26, 117];
+                const initalvalue = 0;
+                
+                const totalUnits = unitsInStock.reduce((accValue, currValue) => {
+                    return accValue + currValue;
+                }, initalvalue
+            )
+            document.writeln("Total Stock is: "+totalUnits+"<br>");
+
+            </script>
+           <h2>Working with Form data</h2>
         </main>
     </body>
 </html>
